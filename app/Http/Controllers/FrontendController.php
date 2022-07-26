@@ -30,6 +30,19 @@ class FrontendController extends Controller
         return view('front-end.contact');
     }
 
+    public function dashboard(){
+        return view('front-end.dashboard');
+    }
+    
+    public function upload(){
+        return view('front-end.upload');
+    }
+
+    public function upload_image(Request $request){
+        dd($request->all());
+        // var_dump($_POST);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

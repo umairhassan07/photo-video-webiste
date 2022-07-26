@@ -21,6 +21,29 @@
             <li class="nav-item">
                 <a class="nav-link nav-link-4 {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
             </li>
+            @if(Auth::user())
+            <li class="nav-item">
+                <div class="collapse navbar-collapse" id="navbar-list-4">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Dashboard</a>
+                          <a class="dropdown-item" href="#">Profile</a>
+                          <a class="dropdown-item" href="{{ route('logoutr') }}">Log Out</a>
+                        </div>
+                      </li>   
+                    </ul>
+                  </div>
+            </li>
+            @else
+                <li>
+                    <a class="nav-link nav-link-4" href="{{ route('login') }}">Login</a>
+
+                </li>
+            @endif
         </ul>
         </div>
     </div>
